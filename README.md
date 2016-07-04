@@ -1,9 +1,9 @@
 # Fail2Ban Blacklist JAIL for Repeat Offenders
-## with Perma / Extended Banning
+### with Perma / Extended Banning Across Reboots
 
 >A customised jail with action and filter file for Fail2Ban. 
 This jail is based on the recidive jail but makes use of a simple 
-text file to enable extended and permanent bans.
+text file to enable extended and permanent bans even across reboots.
 
 #####Author: Mitchell Krog <mitchellkrog@gmail.com>
 #####Version: 1.0
@@ -103,7 +103,7 @@ text file to enable extended and permanent bans.
 		unmodified state. 
 		
 		Don't place yourself in a situation of going through the effort of installing Fail2Ban for
-		added security measure while at the same time disabling other security measures. 
+		added security measures while at the same time disabling other security measures. 
 				
 ## Disclaimer:
 		This software comes with no warranty of any sort and you use this at your own risk.
