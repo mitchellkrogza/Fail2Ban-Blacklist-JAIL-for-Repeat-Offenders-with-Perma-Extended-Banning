@@ -76,12 +76,50 @@ text file to enable extended and permanent bans.
 		it's as simple as that.
 		
 		I based this on the recidive filter which comes with Fail2Ban but I found this a better
-		method at making sure bans are persistent across reboots and it's fool proof.
+		method at making sure bans are persistent across reboots and it's fool proof. It also very
+		fast and does not slow down Fail2Ban whatsoever.
 		
 		It is suggested to also modify your Fail2Ban log rotation settings to have logrotate
 		retain Fail2Ban logs for at least 13 months.
 		
+		It has only been tested on the 0.91 version on Ubuntu 16.04 but it should work perfectly
+		for any previous versions too but there is no guarantee of this until I can test myself.
+				
 		If you are new to Fail2Ban go read my tutorial at
 		https://ubuntu101.co.za/security/fail2ban/fail2ban-persistent-bans-ubuntu/
 		
+#### Some Good Advice For You:
+		In my time working with Fail2Ban I have had to rely on many forums for help and guidance
+		with problems I ran into. Almost every time I found out my problems were all merely syntax
+		related problems in my jail.local file so ALWAYS make sure your syntax is correct by starting
+		the fail2ban client as follows after you have made ANY modifications to your jail.local file.
+		sudo fail2ban-client -vvv -x start
+		This will give you a verbose output for debugging purposes. 
 		
+		Finally and please pay attention to this. I have seen a lot of people on forums who have 
+		had problems getting Fail2Ban to work properly receiving advice from strangers telling them
+		to do silly things like disabling Ubuntu's SELinux / AppArmor module. This really is bad advice
+		because I can assure you Fail2Ban works 100% perfectly with Apparmor / SELinux in it's default
+		unmodified state. 
+		
+		Don't place yourself in a situation of going through the effort of installing Fail2Ban for
+		added security measure while at the same time disabling other security measures. 
+				
+## Disclaimer:
+		This software comes with no warranty of any sort and you use this at your own risk.
+		The author will not be held responsible for any failures through the use of this software
+		add on for the popular Fail2Ban plugin.
+		
+		This plugin / custom jail for Fail2Ban is also NOT official, it is customised by myself
+		for my own server environment and I have made it available on Github as open source 
+		software. 
+		
+		While this software has been thoroughly tested on the server environment and software
+		versions listed in this read file, the author can not offer any guarantee that it will 
+		work on your server.
+		
+		The most common reason should this not work for you is that your file permissions have
+		been fiddled with or your server has been modified in other non-standard ways.
+		Fail2Ban requires root access to all it's files and folders.
+		
+##### 	Thanks to all the really good folks out there who contribute to Fail2Ban and who write add ons and modules for it.
