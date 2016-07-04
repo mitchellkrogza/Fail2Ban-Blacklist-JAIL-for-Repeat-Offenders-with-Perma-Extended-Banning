@@ -5,10 +5,15 @@
 This jail is based on the recidive jail but makes use of a simple 
 text file to enable extended and permanent bans even across reboots.
 
+>This is intended to replace the recidive filter so make sure that
+recidive is set to enabled = false do not have both this jail and
+recidive running at the same time
+
 #####Author: Mitchell Krog <mitchellkrog@gmail.com>
 #####Version: 1.0
 ######GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 ######Blog: https://ubuntu101.co.za/
+######Fail2Ban: http://www.fail2ban.org/wiki/index.php/Main_Page
 
 ####Tested On: 
 				Fail2Ban 0.91
@@ -23,6 +28,7 @@ text file to enable extended and permanent bans even across reboots.
 				requires jail settings called [blacklist]
 				requires ip.blacklist file in /etc/fail2ban
 				create with sudo touch /etc/fail2ban/ip.blacklist
+				recidive filter must be disabled (do not run both at same time)
 
 ###Drawbacks: 
  				Only works with IPTables
@@ -99,7 +105,7 @@ text file to enable extended and permanent bans even across reboots.
 		edit this file at /etc/logrotate.d/fail2ban
 
 		This is set to rotate the log file monthly and delete any log files older than
-		13 months assuring you, you always have a full 1 year of log's to reference for
+		13 months, assuring you, you always have a full 1 year of log's to reference for
 		Repeat Offenders
 
 			/var/log/fail2ban.log {
