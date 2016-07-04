@@ -160,7 +160,7 @@ text file to enable extended and permanent bans even across reboots.
 		software. 
 		
 		While this software has been thoroughly tested on the server environment and software
-		versions listed in this read file, the author can not offer any guarantee that it will 
+		versions listed in this readme file, the author can not offer any guarantee that it will 
 		work on your server.
 		
 		The most common reason should this not work for you is that your file permissions have
@@ -172,5 +172,3 @@ text file to enable extended and permanent bans even across reboots.
 		best to help you if I can find any free time to do so.
 		
 ### 	Thanks to all the really good folks out there who contribute to Fail2Ban and who write add ons and modules for it.
-
-###### I hope I can say this is the best commented GitHub project out there :)
