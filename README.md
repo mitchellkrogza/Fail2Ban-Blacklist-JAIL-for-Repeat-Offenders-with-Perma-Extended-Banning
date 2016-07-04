@@ -7,7 +7,7 @@ text file to enable extended and permanent bans.
 
 ##Author: Mitchell Krog <mitchellkrog@gmail.com>
 ##Version: 1.0
-###GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
+######GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 
 ####Tested On: Fail2Ban 0.91
 ####Server: Ubuntu 16.04
