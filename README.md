@@ -34,7 +34,7 @@ recidive running at the same time
  				Only works with IPTables
  
 ###Based on: 
- 				the Recidive Jail from Fail2Ban
+ 				the Recidive Jail from Fail2Ban (do not run both at same time please)
  				
 ### How it works / Concepts:
 		This jail monitors all your Fail2Ban log files including any rotated
@@ -61,10 +61,14 @@ recidive running at the same time
 
 ### The Startup Action:		
 		The startup action checks the existing ip.blacklist file for any duplicates and
-		automatically removes them. The startup action then adds all IP's contained in the blacklist
-		file into your IPTables with a DROP command. This happens every time Fail2Ban starts or
-		after a server reboot. This means this truly works across reboots unlike other repeat 
-		offender jails out there. It also effectively deals with any chance of duplicates.
+		automatically removes them. It also sorts the file into numbered order which makes
+		looking through the file later a breeze. The startup action then adds all IP's contained 
+		in the blacklist file into your IPTables with a DROP command. This happens every time 
+		Fail2Ban starts or even after a server reboot. This means this truly works across reboots 
+		unlike other repeat offender jails out there. 
+		
+		It also effectively deals with any chance of duplicates.
+		A really simple sort commandline used to sort and clear the file of dupes.
 
 ### The Ban Action:		
 		The ban action takes a new IP address which was found to match our rules and writes this
@@ -75,7 +79,8 @@ recidive running at the same time
 		The unban action removes the IP address from the ip.blacklist file and deletes the 
 		IPTables firewall entry. If the same offending IP address comes back and tries an attack
 		again even just once, he will probably satisfy the 1 year rule again and will be blocked 
-		again for another entire year.
+		again for another entire year. A really simple sed commandline used to delete the IP entry 
+		from the ip.blocklist file.
 		
 #### Other Comments:
 		Some may think this is harsh but if someone really tries 10 times they must be banned
@@ -172,6 +177,12 @@ recidive running at the same time
 		The most common reason should this not work for you is that your file permissions have
 		been fiddled with or your server has been modified in other non-standard ways.
 		Fail2Ban requires root access to all it's files and folders.
+
+## Free to Use - Free to Change:
+		This is open source software and 100% free to use. 
+		You can modify it to your liking if you don't like the way I have done something, 
+		but if you break it you fix it yourself. This workign and tested version is truly all
+		you should ever need.
 		
 ## Issues:
 		Feel free to log any issues using the issue logging system here on GitHub. I will do my
