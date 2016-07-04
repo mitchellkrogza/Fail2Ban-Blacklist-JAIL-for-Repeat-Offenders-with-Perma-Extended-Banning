@@ -13,7 +13,8 @@ text file to enable extended and permanent bans.
 ####Server: Ubuntu 16.04
 ####Firewall: IPTables
 
-###Dependancies: requires blacklist.conf in /etc/fail2ban/filter.d folder
+###Dependancies: 
+				requires blacklist.conf in /etc/fail2ban/filter.d folder
 				requires blacklist.conf in /etc/fail2ban/action.d folder
 				requires jail settings called [blacklist]
 				requires ip.blacklist file in /etc/fail2ban
