@@ -88,7 +88,7 @@ text file to enable extended and permanent bans even across reboots.
 		It is suggested to also modify your Fail2Ban log rotation settings to have logrotate
 		retain Fail2Ban logs for at least 13 months. (see below for logrotate settings for Fail2Ban)
 		
-		It has only been tested on the 0.91 version on Ubuntu 16.04 but it should work perfectly
+		It has only been tested on the 0.91 version of Fail2Ban on Ubuntu 16.04 but it should work perfectly
 		for any previous versions too but there is no guarantee of this until I can test myself.
 				
 		If you are new to Fail2Ban go read my tutorial at
