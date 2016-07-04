@@ -2,7 +2,8 @@
 #
 # Custom BlackList Jail Settings to add to your
 # jail.local file at the end
-# GitHub: 
+# requires an action.d and filter.d conf file available at
+# GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 #
 
 
@@ -13,3 +14,12 @@ banaction = blacklist
 bantime  = 31536000   ; 1 year
 findtime = 31536000   ; 1 year
 maxretry = 10
+
+#
+# bantime, findtime and maxretry can be modified
+# to your liking
+# make sure though that these values are set higher
+# than your other jails
+# log file location is wile-carded to ensure even .log.gz files
+# are read by Fail2Ban
+#
