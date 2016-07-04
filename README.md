@@ -76,17 +76,38 @@ text file to enable extended and permanent bans even across reboots.
 		it's as simple as that.
 		
 		I based this on the recidive filter which comes with Fail2Ban but I found this a better
-		method at making sure bans are persistent across reboots and it's fool proof. It also very
+		method at making sure bans are persistent across reboots and it's fool proof. It's also very
 		fast and does not slow down Fail2Ban whatsoever.
 		
 		It is suggested to also modify your Fail2Ban log rotation settings to have logrotate
-		retain Fail2Ban logs for at least 13 months.
+		retain Fail2Ban logs for at least 13 months. (see below for logrotate settings for Fail2Ban)
 		
 		It has only been tested on the 0.91 version on Ubuntu 16.04 but it should work perfectly
 		for any previous versions too but there is no guarantee of this until I can test myself.
 				
 		If you are new to Fail2Ban go read my tutorial at
 		https://ubuntu101.co.za/security/fail2ban/fail2ban-persistent-bans-ubuntu/
+		
+#### LogRotate Settings for Fail2Ban:
+
+		edit this file at /etc/logrotate.d/fail2ban
+
+		This is set to rotate the log file monthly and delete any log files older than
+		13 months assuring you, you always have a full 1 year of log's to reference for
+		Repeat Offenders
+
+			/var/log/fail2ban.log {
+    			monthly
+    			rotate 13
+    			compress
+				delaycompress
+    			missingok
+    			notifempty
+    			postrotate
+				fail2ban-client flushlogs 1>/dev/null
+    			endscript
+    			create 640 root adm
+				}
 		
 #### Some Good Advice For You:
 		In my time working with Fail2Ban I have had to rely on many forums for help and guidance
