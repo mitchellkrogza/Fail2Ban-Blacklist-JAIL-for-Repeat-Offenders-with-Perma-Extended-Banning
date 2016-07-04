@@ -143,4 +143,8 @@ text file to enable extended and permanent bans even across reboots.
 		been fiddled with or your server has been modified in other non-standard ways.
 		Fail2Ban requires root access to all it's files and folders.
 		
+## Issues:
+		Feel free to log any issues using the issue logging system here on GitHub. I will do my
+		best to help you if I can find any free time to do so.
+		
 ##### 	Thanks to all the really good folks out there who contribute to Fail2Ban and who write add ons and modules for it.
