@@ -171,4 +171,6 @@ text file to enable extended and permanent bans even across reboots.
 		Feel free to log any issues using the issue logging system here on GitHub. I will do my
 		best to help you if I can find any free time to do so.
 		
-##### 	Thanks to all the really good folks out there who contribute to Fail2Ban and who write add ons and modules for it.
+### 	Thanks to all the really good folks out there who contribute to Fail2Ban and who write add ons and modules for it.
+
+###### I hope I can say this is the best commented GitHub project out there :)
