@@ -20,7 +20,8 @@ text file to enable extended and permanent bans.
 				requires ip.blacklist file in /etc/fail2ban
 				create with sudo touch /etc/fail2ban/ip.blacklist
 
- ###Drawbacks: 
+###Drawbacks: 
  				Only works with IPTables
- ###Based on: 
+ 
+###Based on: 
  				the Recidive Jail from Fail2Ban
