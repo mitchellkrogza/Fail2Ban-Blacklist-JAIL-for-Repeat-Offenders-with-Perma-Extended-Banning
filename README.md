@@ -43,7 +43,7 @@ text file to enable extended and permanent bans even across reboots.
 						bantime of 1 year (31536000 seconds)
 						maxretry of 10 attempts
 						
-		This means Fail2Ban will scan through it's log files over a full year's period
+		This means Fail2Ban will scan through it's log files over a full year's period.
 		If it finds the same attack pattern, let's say an SSH attack for instance, from the
 		same IP address on 10 different occasions anywhere within 1 year, that IP address 
 		is then regarded as a repeat offender and can very well be blacklisted for the 1 year 
@@ -73,7 +73,13 @@ text file to enable extended and permanent bans even across reboots.
 		
 #### Other Comments:
 		Some may think this is harsh but if someone really tries 10 times they must be banned
-		it's as simple as that.
+		it's as simple as that. 
+		
+		If a rogue IP address really has not been dealt with by the network manager of the company 
+		owning the IP address (in an entire year), then it's unlikely they will ever deal with it 
+		or simply are being hacked to death themselves and don't even know how to stop it. 
+
+		Then it is time to even consider using -1 as your bantime so these BAD IP's are blocked forever.
 		
 		I based this on the recidive filter which comes with Fail2Ban but I found this a better
 		method at making sure bans are persistent across reboots and it's fool proof. It's also very
@@ -125,6 +131,24 @@ text file to enable extended and permanent bans even across reboots.
 		
 		Don't place yourself in a situation of going through the effort of installing Fail2Ban for
 		added security measures while at the same time disabling other security measures. 
+
+## A Personal Comment on Country Blocking:
+		Be careful of following advice of blocking entire country IP blocks. 
+		It's just in my opinion a really bad network practice to block an entire country simply because 
+		one or two networks are badly managed. 
+		
+		You may be hosting web sites for clients who are losing potential business from other countries
+		simply because you have set rules to prevent that entire country from even seeing their web site
+		or reaching your server.
+		
+		Fail2Ban and this custom Jail will work perfectly for you at dealing with individual repeat offender
+		IP addresses and dealing with them permanently. 
+		
+		If you really must block an entire country, make sure you are 100% aware of the implications.
+
+		If someone really wants to hack your servers though, they will just jump to another country
+		.... and another ..... and another .... and another ..... are you going to block the entire world 
+		eventually?
 				
 ## Disclaimer:
 		This software comes with no warranty of any sort and you use this at your own risk.
