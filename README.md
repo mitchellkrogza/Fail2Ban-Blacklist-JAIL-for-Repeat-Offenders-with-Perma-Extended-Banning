@@ -5,8 +5,8 @@
 This jail is based on the recidive jail but makes use of a simple 
 text file to enable extended and permanent bans.
 
-##Author: Mitchell Krog <mitchellkrog@gmail.com>
-##Version: 1.0
+#####Author: Mitchell Krog <mitchellkrog@gmail.com>
+#####Version: 1.0
 ######GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 
 ####Tested On: 
