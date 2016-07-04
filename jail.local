@@ -1,0 +1,15 @@
+
+#
+# Custom BlackList Jail Settings to add to your
+# jail.local file at the end
+# GitHub: 
+#
+
+
+[blacklist]
+enabled = true
+logpath  = /var/log/fail2ban.*
+banaction = blacklist
+bantime  = 31536000   ; 1 year
+findtime = 31536000   ; 1 year
+maxretry = 10
