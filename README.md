@@ -132,7 +132,7 @@ text file to enable extended and permanent bans even across reboots.
 		Don't place yourself in a situation of going through the effort of installing Fail2Ban for
 		added security measures while at the same time disabling other security measures. 
 
-## A Personal Comment on Country Blocking:
+#### A Personal Comment on Country Blocking:
 		Be careful of following advice of blocking entire country IP blocks. 
 		It's just in my opinion a really bad network practice to block an entire country simply because 
 		one or two networks are badly managed. 
