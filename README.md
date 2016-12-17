@@ -10,10 +10,13 @@ recidive is set to enabled = false do not have both this jail and
 recidive running at the same time
 
 #####Author: Mitchell Krog <mitchellkrog@gmail.com>
-#####Version: 1.0
+#####Version: 1.1
 ######GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 ######Blog: https://ubuntu101.co.za/
 ######Fail2Ban: http://www.fail2ban.org/wiki/index.php/Main_Page
+
+### Changes Made
+#### 2016-12-17 - Modified files to prevent hundreds of emails each time server starts up.
 
 ####Tested On: 
 				Fail2Ban 0.91
