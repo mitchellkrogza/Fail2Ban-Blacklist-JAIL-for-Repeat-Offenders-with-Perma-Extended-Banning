@@ -25,19 +25,19 @@ recidive running at the same time
 
 # SETUP INSTRUCTIONS: 
 
-- STEP 1: requires blacklist.conf in /etc/fail2ban/filter.d folder
+- **STEP 1:** requires blacklist.conf in /etc/fail2ban/filter.d folder
 
 `cd /etc/fail2ban/filter.d`
 
 `sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/filter.d/blacklist.conf -O blacklist.conf`
 
-- STEP 2: requires blacklist.conf in /etc/fail2ban/action.d folder
+- **STEP 2:** requires blacklist.conf in /etc/fail2ban/action.d folder
 
 `cd /etc/fail2ban/action.d`
 
 `sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/action.d/blacklist.conf -O blacklist.conf`
 
-- STEP 3: requires jail settings called [blacklist]
+- **STEP 3:** requires jail settings called [blacklist]
 
 `sudo nano /etc/fail2ban/jail.local`
 
@@ -54,7 +54,7 @@ findtime = 31536000   ; 1 year
 maxretry = 10
 ```
 
-- STEP 4: requires ip.blacklist file in /etc/fail2ban
+- **STEP 4:** requires ip.blacklist file in /etc/fail2ban
 
 create the file
 
@@ -64,7 +64,7 @@ make the file writable
 
 `sudo chmod 755 /etc/fail2ban/ip.blacklist`
 
-- STEP 5: recidive filter must be disabled (do not run both at same time)
+- **STEP 5:** recidive filter must be disabled (do not run both at same time)
 
 ###Drawbacks: 
 
