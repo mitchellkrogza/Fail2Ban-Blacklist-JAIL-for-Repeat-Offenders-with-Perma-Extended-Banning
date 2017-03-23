@@ -10,9 +10,13 @@ recidive is set to enabled = false do not have both this jail and
 recidive running at the same time
 
 #####Author: Mitchell Krog <mitchellkrog@gmail.com>
+
 #####Version: 1.1
+
 ######GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
+
 ######Blog: https://ubuntu101.co.za/
+
 ######Fail2Ban: http://www.fail2ban.org/wiki/index.php/Main_Page
 
 ### Changes Made
@@ -25,13 +29,48 @@ recidive running at the same time
 ####Firewall: 
 				IPTables
 
-###Dependancies: 
-				requires blacklist.conf in /etc/fail2ban/filter.d folder
-				requires blacklist.conf in /etc/fail2ban/action.d folder
-				requires jail settings called [blacklist]
-				requires ip.blacklist file in /etc/fail2ban
-				create with sudo touch /etc/fail2ban/ip.blacklist
-				recidive filter must be disabled (do not run both at same time)
+### SETUP INSTRUCTIONS: 
+
+- STEP 1: requires blacklist.conf in /etc/fail2ban/filter.d folder
+
+`cd /etc/fail2ban/filter.d`
+
+`sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/filter.d/blacklist.conf -O blacklist.conf`
+
+- STEP 2: requires blacklist.conf in /etc/fail2ban/action.d folder
+
+`cd /etc/fail2ban/action.d`
+
+`sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/action.d/blacklist.conf -O blacklist.conf`
+
+- STEP 3: requires jail settings called [blacklist]
+
+`sudo nano /etc/fail2ban/jail.local`
+
+add this to the bottom of the file
+
+```
+[blacklist]
+enabled = true
+logpath  = /var/log/fail2ban.*
+filter = blacklist
+banaction = blacklist
+bantime  = 31536000   ; 1 year
+findtime = 31536000   ; 1 year
+maxretry = 10
+```
+
+- STEP 4: requires ip.blacklist file in /etc/fail2ban
+
+create the file
+
+`sudo touch /etc/fail2ban/ip.blacklist`
+
+make the file writable
+
+`sudo chmod 755 /etc/fail2ban/ip.blacklist`
+
+- STEP 5: recidive filter must be disabled (do not run both at same time)
 
 ###Drawbacks: 
  				Only works with IPTables
@@ -40,6 +79,7 @@ recidive running at the same time
  				the Recidive Jail from Fail2Ban (do not run both at same time please)
  				
 ### How it works / Concepts:
+
 		This jail monitors all your Fail2Ban log files including any rotated
 		log files because the log file location setting in the jail is wild-carded
 		
@@ -63,6 +103,7 @@ recidive running at the same time
 		sudo touch /etc/fail2ban/ip.blacklist
 
 ### The Startup Action:		
+
 		The startup action checks the existing ip.blacklist file for any duplicates and
 		automatically removes them. It also sorts the file into numbered order which makes
 		looking through the file later a breeze. The startup action then adds all IP's contained 
@@ -74,11 +115,13 @@ recidive running at the same time
 		A really simple sort commandline used to sort and clear the file of dupes.
 
 ### The Ban Action:		
+
 		The ban action takes a new IP address which was found to match our rules and writes this
 		new entry into the ip.blacklist file and it then adds this new IP to the IPTables rules and the
 		new repeat offender is immediately blocked with a DROP command.
 		
 ### The UnBan Action:
+
 		The unban action removes the IP address from the ip.blacklist file and deletes the 
 		IPTables firewall entry. If the same offending IP address comes back and tries an attack
 		again even just once, he will probably satisfy the 1 year rule again and will be blocked 
@@ -86,6 +129,7 @@ recidive running at the same time
 		from the ip.blocklist file.
 		
 #### Other Comments:
+
 		Some may think this is harsh but if someone really tries 10 times they must be banned
 		it's as simple as that. 
 		
@@ -130,6 +174,7 @@ recidive running at the same time
 				}
 		
 #### Some Good Advice For You:
+
 		In my time working with Fail2Ban I have had to rely on many forums for help and guidance
 		with problems I ran into. Almost every time I found out my problems were all merely syntax
 		related problems in my jail.local file so ALWAYS make sure your syntax is correct by starting
@@ -147,6 +192,7 @@ recidive running at the same time
 		added security measures while at the same time disabling other security measures. 
 
 #### A Personal Comment on Country Blocking:
+
 		Be careful of following advice of blocking entire country IP blocks. 
 		It's just in my opinion a really bad network practice to block an entire country simply because 
 		one or two networks are badly managed. 
@@ -165,6 +211,7 @@ recidive running at the same time
 		eventually?
 				
 ## Disclaimer:
+
 		This software comes with no warranty of any sort and you use this at your own risk.
 		The author will not be held responsible for any failures through the use of this software
 		add on for the popular Fail2Ban plugin.
@@ -182,12 +229,14 @@ recidive running at the same time
 		Fail2Ban requires root access to all it's files and folders.
 
 ## Free to Use - Free to Change:
+
 		This is open source software and 100% free to use. 
 		You can modify it to your liking if you don't like the way I have done something, 
 		but if you break it you fix it yourself. This workign and tested version is truly all
 		you should ever need.
 		
 ## Issues:
+
 		Feel free to log any issues using the issue logging system here on GitHub. I will do my
 		best to help you if I can find any free time to do so.
 		
