@@ -1,6 +1,8 @@
 # Fail2Ban Blacklist JAIL for Repeat Offenders
 ### with Perma / Extended Banning Across Reboots
 
+### If this helps you why not [buy me a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BKF9XT6WHATLG):beer:
+
 >A customised jail with action and filter file for Fail2Ban. 
 This jail is based on the recidive jail but makes use of a simple 
 text file to enable extended and permanent bans even across reboots.
@@ -238,3 +240,5 @@ Feel free to log any issues using the issue logging system here on GitHub. I wil
 best to help you if I can find any free time to do so.
 		
 ### 	Thanks to all the really good folks out there who contribute to Fail2Ban and who write add ons and modules for it.
+
+### If this helped you why not [buy me a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BKF9XT6WHATLG):beer:
