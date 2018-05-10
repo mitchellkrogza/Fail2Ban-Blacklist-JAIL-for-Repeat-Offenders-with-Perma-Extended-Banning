@@ -56,6 +56,20 @@ findtime = 31536000   ; 1 year
 maxretry = 10
 ```
 
+:exclamation: To stop all email notifications of bans, especially after a server reboot, add the jail as follows:
+
+```
+[blacklist]
+enabled = true
+logpath  = /var/log/fail2ban.*
+filter = blacklist
+banaction = blacklist
+action = %(action_)s
+bantime  = 31536000   ; 1 year
+findtime = 31536000   ; 1 year
+maxretry = 10
+```
+
 - **STEP 4:** requires ip.blacklist file in /etc/fail2ban
 
 create the file
