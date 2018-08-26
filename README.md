@@ -61,6 +61,10 @@ maxretry = 10
 :exclamation: To stop all email notifications of bans, especially after a server reboot, add the jail as follows:
 
 ```
+[DEFAULT]
+port = 0:65535
+filter = %(__name__)s
+
 [blacklist]
 enabled = true
 logpath  = /var/log/fail2ban.*
