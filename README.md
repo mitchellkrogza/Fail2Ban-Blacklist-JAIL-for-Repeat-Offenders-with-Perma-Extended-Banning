@@ -18,11 +18,9 @@ recidive running at the same time
 - Fail2Ban: http://www.fail2ban.org/wiki/index.php/Main_Page
 
 ### Changes Made
-- 2016-12-17 - Modified files to prevent hundreds of emails each time server starts up.
-- 2017-03-23 - Update Readme and Configuration Instructions
-
-- Tested On: Fail2Ban 0.9.1 > 0.9.6
-- Server: Ubuntu 16.04
+- 2018-08-25 - Refork version to make working with oldstable 0.8.13 Debian 8.1
+- Tested On: Fail2Ban 0.8.13
+- Server: Debian "Jessie" 8.1
 - Firewall: IPTables
 
 # SETUP INSTRUCTIONS: 
@@ -31,13 +29,13 @@ recidive running at the same time
 
 `cd /etc/fail2ban/filter.d`
 
-`sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/filter.d/blacklist.conf -O blacklist.conf`
+`sudo wget https://raw.githubusercontent.com/BrigsLabs/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/filter.d/blacklist.conf -O blacklist.conf`
 
 - **STEP 2:** requires blacklist.conf in /etc/fail2ban/action.d folder
 
 `cd /etc/fail2ban/action.d`
 
-`sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/action.d/blacklist.conf -O blacklist.conf`
+`sudo wget https://raw.githubusercontent.com/BrigsLabs/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/action.d/blacklist.conf -O blacklist.conf`
 
 - **STEP 3:** requires jail settings called [blacklist]
 
@@ -46,6 +44,10 @@ recidive running at the same time
 add this to the bottom of the file
 
 ```
+[DEFAULT]
+port = 0:65535
+filter = %(__name__)s
+
 [blacklist]
 enabled = true
 logpath  = /var/log/fail2ban.*

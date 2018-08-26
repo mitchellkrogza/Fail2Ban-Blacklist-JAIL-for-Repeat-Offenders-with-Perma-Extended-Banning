@@ -1,4 +1,4 @@
-
+# Refork version jail.local for oldstable fail2ban 0.8.13 Debian 8.1 "Jessie"
 #
 # Custom BlackList Jail Settings to add to your
 # jail.local file at the end
@@ -6,6 +6,9 @@
 # GitHub: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 #
 
+[DEFAULT]
+port = 0:65535
+filter = %(__name__)s
 
 [blacklist]
 enabled = true
