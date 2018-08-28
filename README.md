@@ -1,7 +1,10 @@
 # Fail2Ban Blacklist JAIL for Repeat Offenders
 ### with Perma / Extended Banning Across Reboots
 
-### If this helps you why not [buy me a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BKF9XT6WHATLG):beer:
+### If this helped you
+
+[![Help me out with a mug of beer](https://img.shields.io/badge/Help%20-%20me%20out%20with%20a%20mug%20of%20%F0%9F%8D%BA-blue.svg)](https://paypal.me/mitchellkrog/) or [![Help me feed my cat](https://img.shields.io/badge/Help%20-%20me%20feed%20my%20hungry%20cat%20%F0%9F%98%B8-blue.svg)](https://paypal.me/mitchellkrog/)
+
 
 >A customised jail with action and filter file for Fail2Ban. 
 This jail is based on the recidive jail but makes use of a simple 
@@ -12,6 +15,7 @@ recidive is set to enabled = false do not have both this jail and
 recidive running at the same time
 
 - Author: Mitchell Krog <mitchellkrog@gmail.com>
+- Contributors: BrigsLabs - https://github.com/BrigsLabs
 - Version: 1.1
 - Project URL: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 - Blog: https://ubuntu101.co.za/
@@ -29,13 +33,13 @@ recidive running at the same time
 
 `cd /etc/fail2ban/filter.d`
 
-`sudo wget https://raw.githubusercontent.com/BrigsLabs/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/filter.d/blacklist.conf -O blacklist.conf`
+`sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/filter.d/blacklist.conf -O blacklist.conf`
 
 - **STEP 2:** requires blacklist.conf in /etc/fail2ban/action.d folder
 
 `cd /etc/fail2ban/action.d`
 
-`sudo wget https://raw.githubusercontent.com/BrigsLabs/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/action.d/blacklist.conf -O blacklist.conf`
+`sudo wget https://raw.githubusercontent.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/master/action.d/blacklist.conf -O blacklist.conf`
 
 - **STEP 3:** requires jail settings called [blacklist]
 
