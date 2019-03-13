@@ -17,15 +17,12 @@ recidive running at the same time
 - Author: Mitchell Krog <mitchellkrog@gmail.com>
 - Contributors: BrigsLabs - https://github.com/BrigsLabs
 - Version: 1.1
+- Tested on Fail2Ban: 0.8.13 > 0.10.2
+- Servers used in Testing: Ubuntu 14.04 LTS, 16.04 LTS, 18.04 LTS
 - Project URL: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
 - Blog: https://ubuntu101.co.za/
 - Fail2Ban: http://www.fail2ban.org/wiki/index.php/Main_Page
-
-### Changes Made
-- 2018-08-25 - Refork version to make working with oldstable 0.8.13 Debian 8.1
-- Tested On: Fail2Ban 0.8.13
-- Server: Debian "Jessie" 8.1
-- Firewall: IPTables
+- [Changelog](https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning/blob/master/CHANGELOG.md) 
 
 # SETUP INSTRUCTIONS: 
 
